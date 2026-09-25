@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏰✨ Salón de la Fama de Hogwarts ✨🏰</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts Google: Cinzel & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #0a080d;
+            --card-bg: rgba(18, 15, 25, 0.95);
+            --parchment-border: rgba(212, 175, 55, 0.35);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-dark);
+            color: #f3e5ab;
+            min-height: 100vh;
+        }
+
+        .font-cinzel {
+            font-family: 'Cinzel', serif;
+        }
+
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #fff5c0 0%, #d4af37 50%, #aa7c11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .magical-card {
+            background: var(--card-bg);
+            border: 1px solid var(--parchment-border);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+        }
+
+        .trophy-wrap {
+            letter-spacing: 0.1em;
+            word-break: break-word;
+            line-height: 1.7;
+        }
+
+        .tab-btn.active {
+            background: #d4af37;
+            color: #0a080d;
+            font-weight: 700;
+            border-color: #fef08a;
+        }
+    </style>
+</head>
+<body class="min-h-screen text-amber-100 flex flex-col justify-between overflow-x-hidden">
+
+    <div>
+        <!-- HEADER -->
+        <header class="py-5 px-4 text-center border-b border-amber-500/30 bg-black/80 sticky top-0 z-50">
+            <div class="max-w-5xl mx-auto">
+                <div class="flex items-center justify-center gap-1.5 mb-1">
+                    <span class="text-xs tracking-widest text-amber-400 font-cinzel uppercase">Colegio Mágico de Magia y Hechicería</span>
+                </div>
+                
+                <!-- Heading principal de menor tamaño -->
+                <h1 class="text-xl sm:text-2xl md:text-3xl font-cinzel font-bold text-gold-gradient tracking-wide mb-2">
+                    🏰 SALÓN DE LA FAMA 🏰
+                </h1>
+
+                <!-- Search & Filters -->
+                <div class="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-2xl mx-auto">
+                    <input type="text" id="searchInput" placeholder="🔍 Buscar mago, bruja o universo..." 
+                        class="w-full sm:w-64 bg-slate-950 border border-amber-500/50 rounded-full px-4 py-1.5 text-xs text-amber-100 placeholder-amber-500/50 focus:outline-none focus:border-amber-300">
+
+                    <div class="flex justify-center gap-2 text-xs font-cinzel">
+                        <button onclick="filterCategory('all')" class="tab-btn active px-3 py-1.5 rounded-full border border-amber-500/40 bg-slate-900 transition-all">
+                            ✨ Todos
+                        </button>
+                        <button onclick="filterCategory('cups')" class="tab-btn px-3 py-1.5 rounded-full border border-amber-500/40 bg-slate-900 transition-all">
+                            🏆 Copas
+                        </button>
+                        <button onclick="filterCategory('awards')" class="tab-btn px-3 py-1.5 rounded-full border border-amber-500/40 bg-slate-900 transition-all">
+                            🎗️ Premios
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT CONTAINER -->
+        <main class="max-w-5xl mx-auto px-4 py-8 space-y-10">
+
+            <!-- COPA DE LAS CASAS (Category: cups) -->
+            <section id="house-cups" class="category-section category-cups">
+                <div class="mb-4">
+                    <h2 class="text-lg sm:text-xl font-cinzel font-bold text-gold-gradient flex items-center gap-2">
+                        <span>🏆</span> COPA DE LAS CASAS
+                    </h2>
+                    <p class="text-xs text-amber-200/70">Puntajes acumulados por las casas de Hogwarts</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Ravenclaw -->
+                    <div class="magical-card rounded-xl p-4 search-item" data-search="ravenclaw aguila copa casas">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-2xl">💙🦅</span>
+                            <h3 class="text-base font-cinzel font-bold text-blue-400">Ravenclaw</h3>
+                        </div>
+                        <div class="bg-black/50 p-3 rounded-lg border border-amber-500/20">
+                            <div class="trophy-wrap text-lg sm:text-xl text-amber-300">
+                                🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gryffindor -->
+                    <div class="magical-card rounded-xl p-4 search-item" data-search="gryffindor leon copa casas">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-2xl">❤️🦁</span>
+                            <h3 class="text-base font-cinzel font-bold text-red-400">Gryffindor</h3>
+                        </div>
+                        <div class="bg-black/50 p-3 rounded-lg border border-amber-500/20">
+                            <div class="trophy-wrap text-lg sm:text-xl text-amber-300">
+                                🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slytherin -->
+                    <div class="magical-card rounded-xl p-4 search-item" data-search="slytherin serpiente copa casas">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-2xl">💚🐍</span>
+                            <h3 class="text-base font-cinzel font-bold text-emerald-400">Slytherin</h3>
+                        </div>
+                        <div class="bg-black/50 p-3 rounded-lg border border-amber-500/20">
+                            <div class="trophy-wrap text-lg sm:text-xl text-amber-300">
+                                🏆🏆🏆🏆🏆🏆🏆🏆🏆
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hufflepuff -->
+                    <div class="magical-card rounded-xl p-4 search-item" data-search="hufflepuff tejon copa casas">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-2xl">💛🦡</span>
+                            <h3 class="text-base font-cinzel font-bold text-yellow-400">Hufflepuff</h3>
+                        </div>
+                        <div class="bg-black/50 p-3 rounded-lg border border-amber-500/20">
+                            <div class="trophy-wrap text-lg sm:text-xl text-amber-300">
+                                🏆🏆🏆🏆🏆🏆🏆🏆🏆
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PREMIOS ANUALES (Category: awards) -->
+            <section id="annual-awards" class="category-section category-awards">
+                <div class="mb-4">
+                    <h2 class="text-lg sm:text-xl font-cinzel font-bold text-gold-gradient flex items-center gap-2">
+                        <span>🎗️</span> PREMIOS ANUALES
+                    </h2>
+                    <p class="text-xs text-amber-200/70">Reconocimientos anuales a las brujas y magos destacados</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                    <!-- Femeninos -->
+                    <div class="magical-card rounded-xl p-4">
+                        <h3 class="text-sm font-cinzel font-bold text-amber-300 mb-3 border-b border-amber-500/20 pb-1">
+                            Femeninos:
+                        </h3>
+                        <ul class="space-y-1.5 text-xs sm:text-sm">
+                            <li class="search-item" data-search="ana tonks gavner">• 💙🎗️ Ana Tonks Gavner</li>
+                            <li class="search-item" data-search="nerlym scamander">• 💙🎗️🎗️ Nerlym Scamander</li>
+                            <li class="search-item" data-search="kim lily">• 💛🎗️ Kim Lily</li>
+                            <li class="search-item" data-search="angeles potter">• 💙🎗️ Ángeles Potter</li>
+                            <li class="search-item" data-search="dali lupin">• ❤️🎗️ Dali Lupin</li>
+                            <li class="search-item text-amber-300 font-semibold" data-search="amy valkyr">• 💙🎗️🎗️🎗️🎗️ Amy Valkyr</li>
+                            <li class="search-item" data-search="sol malfoy">• 💚🎗️ Sol Malfoy</li>
+                            <li class="search-item" data-search="eunice d potter">• 💙🎗️ Eunice D. Potter</li>
+                            <li class="search-item" data-search="ydiel lovegood">• 💚🎗️🎗️ Ydiel Lovegood</li>
+                            <li class="search-item" data-search="laura weasley">• ❤️🎗️ Laura Weasley</li>
+                            <li class="search-item" data-search="lianna longbottom">• 💙🎗️ Lianna Longbottom</li>
+                            <li class="search-item" data-search="ivette lestrange">• 💛🎗️ Ivette Lestrange</li>
+                            <li class="search-item" data-search="rachel james">• ❤️🎗️ Rachel James</li>
+                            <li class="search-item" data-search="liz m malfoy">• 💚🎗️ Liz M. Malfoy</li>
+                            <li class="search-item" data-search="any black">• 💛🎗️ Any Black</li>
+                            <li class="search-item" data-search="mariann lovegood">• 💛🎗️ Mariann Lovegood</li>
+                        </ul>
+                    </div>
+
+                    <!-- Masculinos -->
+                    <div class="magical-card rounded-xl p-4">
+                        <h3 class="text-sm font-cinzel font-bold text-amber-300 mb-3 border-b border-amber-500/20 pb-1">
+                            Masculinos:
+                        </h3>
+                        <ul class="space-y-1.5 text-xs sm:text-sm">
+                            <li class="search-item" data-search="yasser weasley">• 💛🎗️ Yasser Weasley</li>
+                            <li class="search-item" data-search="daykel gaunt">• 💚🎗️ Daykel Gaunt</li>
+                            <li class="search-item" data-search="luance black">• 💚🎗️ Luance Black</li>
+                            <li class="search-item" data-search="mark rutherford">• ❤️🎗️🎗️ Mark Rutherford</li>
+                            <li class="search-item" data-search="andy greywind">• 💚🎗️ Andy Greywind</li>
+                            <li class="search-item" data-search="hector black">• 💚🎗️ Héctor Black</li>
+                            <li class="search-item text-amber-300 font-semibold" data-search="luis miguel scamander">• 💙🎗️🎗️🎗️ Luis Miguel Scamander</li>
+                            <li class="search-item" data-search="jose black">• ❤️🎗️🎗️ José Black</li>
+                            <li class="search-item" data-search="manu grindelwald">• 💚🎗️ Manu Grindelwald</li>
+                            <li class="search-item" data-search="carlos lupin">• 💚🎗️ Carlos Lupin</li>
+                            <li class="search-item" data-search="carlos scamander">• 💛🎗️🎗️ Carlos Scamander</li>
+                            <li class="search-item" data-search="cristhian malfoy">• 💚🎗️ Cristhian Malfoy</li>
+                            <li class="search-item" data-search="enmanuel black">• ❤🎗️ Enmanuel Black</li>
+                            <li class="search-item" data-search="rodny weasly">• ❤🎗️ Rodny Weasly</li>
+                            <li class="search-item" data-search="poker grimberrial">• 💙🎗️ Poker Grimberrial</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ORDEN DE MERLÍN (Category: awards) -->
+            <section id="merlin" class="category-section category-awards">
+                <div class="mb-4">
+                    <h2 class="text-lg sm:text-xl font-cinzel font-bold text-gold-gradient flex items-center gap-2">
+                        <span>🏅</span> ORDEN DE MERLÍN
+                    </h2>
+                    <p class="text-xs text-amber-200/70">Condecoraciones extraordinarias en tres niveles</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs sm:text-sm">
+                    <!-- Primera -->
+                    <div class="magical-card rounded-xl p-4 border-l-4 border-l-emerald-500">
+                        <h3 class="font-cinzel font-bold text-emerald-400 mb-2">– 💚🏅 PRIMERA:</h3>
+                        <ul class="space-y-1 italic">
+                            <li class="search-item" data-search="andy greywind">• Andy Greywind</li>
+                            <li class="search-item" data-search="erick black">• Erick Black</li>
+                            <li class="search-item" data-search="kelly h dorsa">• Kelly H. Dorsa</li>
+                            <li class="search-item" data-search="roiber j potter">• Roiber J. Potter</li>
+                        </ul>
+                    </div>
+
+                    <!-- Segunda -->
+                    <div class="magical-card rounded-xl p-4 border-l-4 border-l-purple-500">
+                        <h3 class="font-cinzel font-bold text-purple-300 mb-2">– 💜🏅 SEGUNDA:</h3>
+                        <ul class="space-y-1 italic">
+                            <li class="search-item" data-search="daykel gaunt">• Daykel Gaunt</li>
+                            <li class="search-item" data-search="kelly h dorsa">• Kelly H. Dorsa</li>
+                            <li class="search-item" data-search="trix lestrange">• Trix Lestrange</li>
+                            <li class="search-item" data-search="evy tonks">• Evy Tonks</li>
+                            <li class="search-item" data-search="ana tonks gavner">• Ana Tonks Gavner</li>
+                            <li class="search-item" data-search="mark rutherford">• Mark Rutherford</li>
+                            <li class="search-item" data-search="amy valkyr">• Amy Valkyr</li>
+                            <li class="search-item" data-search="dali lupin">• Dali Lupin</li>
+                            <li class="search-item" data-search="yasser weasley">• Yasser Weasley</li>
+                            <li class="search-item" data-search="melani lestrange">• Melani Lestrange</li>
+                            <li class="search-item" data-search="leslie black">• Leslie Black</li>
+                            <li class="search-item" data-search="keity potter">• Keity Potter</li>
+                            <li class="search-item" data-search="diana granger">• Diana Granger</li>
+                            <li class="search-item" data-search="ivette lestrange">• Ivette Lestrange</li>
+                            <li class="search-item" data-search="nerlym scamander">• Nerlym Scamander</li>
+                            <li class="search-item" data-search="amanda lestrange siras">• Amanda Lestrange Siras</li>
+                            <li class="search-item" data-search="maivim black">• Maivim Black</li>
+                            <li class="search-item" data-search="shey lovegood">• Shey Lovegood</li>
+                            <li class="search-item" data-search="lianna longbottom">• Lianna Longbottom</li>
+                            <li class="search-item" data-search="ashley granger">• Ashley Granger</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tercera -->
+                    <div class="magical-card rounded-xl p-4 border-l-4 border-l-slate-300">
+                        <h3 class="font-cinzel font-bold text-slate-200 mb-2">– 🤍🏅 TERCERA:</h3>
+                        <ul class="space-y-1 italic">
+                            <li class="search-item" data-search="amy valkyr">• Amy Valkyr</li>
+                            <li class="search-item" data-search="manu grindelwald">• Manu Grindelwald</li>
+                            <li class="search-item" data-search="hector black">• Héctor Black</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PREMIO ESPECIAL POR SERVICIOS AL COLEGIO (Category: awards) -->
+            <section id="special-awards" class="category-section category-awards">
+                <div class="magical-card rounded-xl p-5 text-center border-amber-500/50">
+                    <h2 class="text-base sm:text-lg font-cinzel font-bold text-gold-gradient mb-1">
+                        🏆 PREMIO ESPECIAL POR SERVICIOS AL COLEGIO 🏆
+                    </h2>
+                    <p class="text-xs text-amber-200/70 mb-3">Servicios meritorios otorgados a la comunidad</p>
+                    <div class="flex flex-wrap justify-center gap-4 font-semibold text-sm italic text-amber-200">
+                        <span class="search-item" data-search="cristian lovegood">• Cristian Lovegood</span>
+                        <span class="search-item" data-search="ariah lacroix">• Ariah Lacroix</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- COPAS TEMÁTICAS (Category: cups) -->
+            <section id="themed-cups" class="category-section category-cups">
+                <div class="mb-4">
+                    <h2 class="text-lg sm:text-xl font-cinzel font-bold text-gold-gradient flex items-center gap-2">
+                        <span>⚔️</span> COPAS TEMÁTICAS 💍
+                    </h2>
+                    <p class="text-xs text-amber-200/70">Campeones por temática e universos externos</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs sm:text-sm">
+                    <!-- Juego de Tronos -->
+                    <div class="magical-card rounded-xl p-4 search-item" data-search="juego de tronos baratheon lannister targaryen">
+                        <h3 class="font-cinzel font-bold text-amber-300 mb-2 border-b border-amber-500/20 pb-1">- ⚔️Juego de Tronos</h3>
+                        <ul class="space-y-1">
+                            <li class="flex justify-between"><span>💛🦌 Baratheon</span> <span>🏆🏆</span></li>
+                            <li class="flex justify-between"><span>♥️🦁 Lannister</span> <span>🏆</span></li>
+                            <li class="flex justify-between"><span>🖤🐉 Targaryen</span> <span>🏆</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Aurores vs Mortífagos -->
+                    <div class="magical-card rounded-xl p-4 search-item" data-search="aurores vs mortifagos mortifagos">
+                        <h3 class="font-cinzel font-bold text-amber-300 mb-2 border-b border-amber-500/20 pb-1">‐ ✨Aurores vs Mortífagos💀</h3>
+                        <p class="flex justify-between"><span>🖤💀 Mortífagos</span> <span>🏆</span></p>
+                    </div>
+
+                    <!-- Liga Inquisitorial vs Ejército de Dumbledore -->
+                    <div class="magical-card rounded-xl p-4 search-item" data-search="liga inquisitorial vs ejercito de dumbledore">
+                        <h3 class="font-cinzel font-bold text-amber-300 mb-2 border-b border-amber-500/20 pb-1">-🏅 Liga Inquisitorial vs Ejército de Dumbledore🧙🏻‍♂️</h3>
+                        <p class="flex justify-between"><span>🤍🧙🏻‍♂️ Ejército de Dumbledore</span> <span>🏆</span></p>
+                    </div>
+
+                    <!-- Avatar -->
+                    <div class="magical-card rounded-xl p-4 search-item" data-search="avatar nomadas aire tribus del agua reino tierra">
+                        <h3 class="font-cinzel font-bold text-amber-300 mb-2 border-b border-amber-500/20 pb-1">-🌊🌪️ Avatar 🔥🪨</h3>
+                        <ul class="space-y-1">
+                            <li class="flex justify-between"><span>🤍🌪️ Nómadas Aire</span> <span>🏆</span></li>
+                            <li class="flex justify-between"><span>💙🌊 Tribus del Agua</span> <span>🏆</span></li>
+                            <li class="flex justify-between"><span>💚🪨 Reino Tierra</span> <span>🏆</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- El Señor de los Anillos -->
+                    <div class="magical-card rounded-xl p-4 search-item" data-search="el senor de los anillos reino de gondor">
+                        <h3 class="font-cinzel font-bold text-amber-300 mb-2 border-b border-amber-500/20 pb-1">-💍 El Señor de los Anillos</h3>
+                        <p class="flex justify-between"><span>🤍🫅🏻 Reino de Gondor</span> <span>🏆</span></p>
+                    </div>
+
+                    <!-- Percy Jackson -->
+                    <div class="magical-card rounded-xl p-4 search-item" data-search="percy jackson atenea hades">
+                        <h3 class="font-cinzel font-bold text-amber-300 mb-2 border-b border-amber-500/20 pb-1">-🏛️ Percy Jackson</h3>
+                        <ul class="space-y-1">
+                            <li class="flex justify-between"><span>💚🦉 Atenea</span> <span>🏆</span></li>
+                            <li class="flex justify-between"><span>🖤💀 Hades</span> <span>🏆🏆</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Los Juegos del Hambre -->
+                    <div class="magical-card rounded-xl p-4 search-item" data-search="los juegos del hambre distrito 12">
+                        <h3 class="font-cinzel font-bold text-amber-300 mb-2 border-b border-amber-500/20 pb-1">-🕌 Los Juegos del Hambre</h3>
+                        <p class="flex justify-between"><span>🖤🔥 Distrito 12</span> <span>🏆</span></p>
+                    </div>
+
+                    <!-- Wednesday Addams -->
+                    <div class="magical-card rounded-xl p-4 search-item" data-search="wednesday addams escamas">
+                        <h3 class="font-cinzel font-bold text-amber-300 mb-2 border-b border-amber-500/20 pb-1">-🕸️ Wednesday Addams</h3>
+                        <p class="flex justify-between"><span>🩵🧜🏻‍♀️ Escamas</span> <span>🏆🏆</span></p>
+                    </div>
+
+                    <!-- ACOTAR -->
+                    <div class="magical-card rounded-xl p-4 search-item" data-search="acotar corte invierno">
+                        <h3 class="font-cinzel font-bold text-amber-300 mb-2 border-b border-amber-500/20 pb-1">-🧝🏻 ACOTAR</h3>
+                        <p class="flex justify-between"><span>🩵❄️ Corte Invierno</span> <span>🏆</span></p>
+                    </div>
+
+                    <!-- Divergente -->
+                    <div class="magical-card rounded-xl p-4 search-item" data-search="divergente abnegacion">
+                        <h3 class="font-cinzel font-bold text-amber-300 mb-2 border-b border-amber-500/20 pb-1">-🏙️ Divergente</h3>
+                        <p class="flex justify-between"><span>🩶🫱🏻‍🫲🏻 Abnegación</span> <span>🏆</span></p>
+                    </div>
+
+                    <!-- World Of Warcraft -->
+                    <div class="magical-card rounded-xl p-4 search-item" data-search="world of wow warcraft horda">
+                        <h3 class="font-cinzel font-bold text-amber-300 mb-2 border-b border-amber-500/20 pb-1">-🌀World Of Warcraft</h3>
+                        <p class="flex justify-between"><span>❤️⚔️ Horda</span> <span>🏆</span></p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER HIGH CONTRAST -->
+        <footer class="mt-12 border-t border-amber-500/40 bg-black py-6 text-center text-xs font-cinzel text-stone-200">
+            <p class="text-amber-300 font-bold">🏰 SALÓN DE LA FAMA • HOGWARTS 🏰</p>
+            <p class="mt-1 text-stone-300">Colegio Mágico de Magia y Hechicería</p>
+        </footer>
+    </div>
+
+    <!-- JAVASCRIPT: Filters & Search Logic (Zero Dependencies) -->
+    <script>
+        // Tab Filter Logic
+        function filterCategory(type) {
+            const tabs = document.querySelectorAll('.tab-btn');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Reset search box when clicking tab
+            document.getElementById('searchInput').value = '';
+
+            const sections = document.querySelectorAll('.category-section');
+            sections.forEach(sec => {
+                if (type === 'all') {
+                    sec.style.display = 'block';
+                } else if (type === 'cups') {
+                    sec.style.display = sec.classList.contains('category-cups') ? 'block' : 'none';
+                } else if (type === 'awards') {
+                    sec.style.display = sec.classList.contains('category-awards') ? 'block' : 'none';
+                }
+            });
+
+            // Show all search items when tab is switched
+            const items = document.querySelectorAll('.search-item');
+            items.forEach(item => item.style.display = '');
+        }
+
+        // Live Search Logic
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase().trim();
+            const searchItems = document.querySelectorAll('.search-item');
+            const sections = document.querySelectorAll('.category-section');
+
+            if (query === '') {
+                const activeTab = document.querySelector('.tab-btn.active');
+                if (activeTab) {
+                    activeTab.click();
+                }
+                return;
+            }
+
+            // Make all sections visible during search
+            sections.forEach(sec => sec.style.display = 'block');
+
+            searchItems.forEach(item => {
+                const searchData = item.getAttribute('data-search') || '';
+                const text = item.textContent.toLowerCase();
+
+                if (searchData.toLowerCase().includes(query) || text.includes(query)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
