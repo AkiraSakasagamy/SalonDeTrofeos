@@ -1,6 +1,6 @@
 :root {
-    /* Tema Claro: Tonos morados muy pálidos y lilas */
-    --bg-main: #f8f6fc;
+    /* Tema Claro: Tonos morados oscurecidos un 'tilín' */
+    --bg-main: #eae2f2;
     
     /* Vitrina de cristal clara base */
     --glass-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
@@ -14,24 +14,35 @@
     --text-primary: #2d1b4e; 
     --text-muted: #6b5a82; 
 }
- 
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-main);
-    /* Fondo claro con destellos sutiles en lila y rosa pálido */
-    background-image: 
-        radial-gradient(at 10% 10%, rgba(206, 182, 237, 0.3) 0px, transparent 50%),
-        radial-gradient(at 90% 85%, rgba(224, 196, 232, 0.4) 0px, transparent 50%);
-    background-attachment: fixed;
     color: var(--text-primary);
     min-height: 100vh;
 }
- 
-/* Tipografía de títulos */
-.font-display {
-    font-family: 'Cinzel Decorative', serif;
+
+/* FIX AL SCROLL LENTO: Se saca el background-attachment de body a un pseudo-elemento fijo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    /* Fondo con destellos sutiles en lila */
+    background-image:
+        radial-gradient(at 10% 10%, rgba(206, 182, 237, 0.4) 0px, transparent 50%),
+        radial-gradient(at 90% 85%, rgba(224, 196, 232, 0.5) 0px, transparent 50%);
+    z-index: -1;
+    pointer-events: none; /* Evita que el fondo intercepte clicks */
 }
- 
+
+/* Tipografía de títulos (Modificado a Cinzel Normal) */
+.font-display {
+    font-family: 'Cinzel', serif;
+}
+
 /* Tarjeta Glassmorphism simulando vitrinas */
 .glass-card {
     background: var(--glass-bg);
@@ -42,14 +53,14 @@ body {
     box-shadow: 0 8px 32px 0 rgba(74, 59, 105, 0.08); 
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
- 
+
 .glass-card:hover {
     background: var(--glass-bg-hover);
     border-color: rgba(184, 134, 11, 0.4); /* Resplandor dorado al pasar el ratón */
     box-shadow: 0 12px 40px 0 rgba(74, 59, 105, 0.12);
     transform: translateY(-2px);
 }
- 
+
 /* Clases específicas para tintes sutiles en Orden de Merlín */
 .merlin-first {
     background: linear-gradient(135deg, rgba(167, 243, 208, 0.4), rgba(255, 255, 255, 0.3));
@@ -60,16 +71,16 @@ body {
 .merlin-third {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
 }
- 
+
 /* Header Glass Sticky */
 .glass-header {
-    background: rgba(248, 246, 252, 0.7);
+    background: rgba(234, 226, 242, 0.7); /* Se oscurece también el Header acorde al fondo */
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.6);
     box-shadow: 0 4px 30px rgba(74, 59, 105, 0.05);
 }
- 
+
 /* Botones de Categoría */
 .tab-btn {
     background: rgba(255, 255, 255, 0.5);
@@ -77,19 +88,19 @@ body {
     color: var(--text-muted);
     transition: all 0.2s ease;
 }
- 
+
 .tab-btn:hover {
     color: var(--text-primary);
     border-color: rgba(184, 134, 11, 0.3);
 }
- 
+
 .tab-btn.active {
     background: rgba(184, 134, 11, 0.1);
     color: var(--gold-accent);
     border-color: var(--gold-accent);
     font-weight: 600;
 }
- 
+
 /* Input de búsqueda */
 .glass-input {
     background: rgba(255, 255, 255, 0.6);
@@ -97,17 +108,17 @@ body {
     color: var(--text-primary);
     transition: all 0.2s ease;
 }
- 
+
 .glass-input:focus {
     background: rgba(255, 255, 255, 0.9);
     border-color: var(--glass-border-focus);
     box-shadow: 0 0 15px rgba(184, 134, 11, 0.15);
 }
- 
+
 .glass-input::placeholder {
     color: rgba(107, 90, 130, 0.6);
 }
- 
+
 /* Ajustes visuales de trofeos */
 .trophy-wrap {
     letter-spacing: 0.08em;
