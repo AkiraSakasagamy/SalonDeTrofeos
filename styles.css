@@ -1,90 +1,113 @@
 :root {
-    --bg-main: #0c0a14;
-    --glass-bg: rgba(22, 16, 38, 0.45);
-    --glass-bg-hover: rgba(30, 22, 51, 0.6);
-    --glass-border: rgba(192, 160, 98, 0.18);
-    --glass-border-focus: rgba(212, 175, 55, 0.4);
-    --gold-accent: #d4af37;
-    --gold-subtle: #c5a059;
-    --text-primary: #f3f0f7;
-    --text-muted: #a39bb8;
+    /* Tema Claro: Tonos morados muy pálidos y lilas */
+    --bg-main: #f8f6fc;
+    
+    /* Vitrina de cristal clara base */
+    --glass-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+    --glass-bg-hover: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.5));
+    --glass-border: rgba(255, 255, 255, 0.8);
+    --glass-border-focus: rgba(184, 134, 11, 0.5); /* Dorado para el focus */
+    
+    /* Textos oscuros para alto contraste */
+    --gold-accent: #b8860b; 
+    --gold-subtle: #8a6327; 
+    --text-primary: #2d1b4e; 
+    --text-muted: #6b5a82; 
 }
-
+ 
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-main);
+    /* Fondo claro con destellos sutiles en lila y rosa pálido */
     background-image: 
-        radial-gradient(at 10% 10%, rgba(59, 26, 102, 0.25) 0px, transparent 50%),
-        radial-gradient(at 90% 85%, rgba(20, 12, 41, 0.4) 0px, transparent 50%);
+        radial-gradient(at 10% 10%, rgba(206, 182, 237, 0.3) 0px, transparent 50%),
+        radial-gradient(at 90% 85%, rgba(224, 196, 232, 0.4) 0px, transparent 50%);
     background-attachment: fixed;
     color: var(--text-primary);
     min-height: 100vh;
 }
-
+ 
 /* Tipografía de títulos */
 .font-display {
     font-family: 'Cinzel Decorative', serif;
 }
-
-/* Tarjeta Glassmorphism */
+ 
+/* Tarjeta Glassmorphism simulando vitrinas */
 .glass-card {
     background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.glass-card:hover {
-    background: var(--glass-bg-hover);
-    border-color: rgba(212, 175, 55, 0.3);
-}
-
-/* Header Glass Sticky */
-.glass-header {
-    background: rgba(12, 10, 20, 0.75);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--glass-border);
+    border: 1px solid var(--glass-border);
+    /* Sombra suave para dar volumen a la "vitrina" */
+    box-shadow: 0 8px 32px 0 rgba(74, 59, 105, 0.08); 
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+ 
+.glass-card:hover {
+    background: var(--glass-bg-hover);
+    border-color: rgba(184, 134, 11, 0.4); /* Resplandor dorado al pasar el ratón */
+    box-shadow: 0 12px 40px 0 rgba(74, 59, 105, 0.12);
+    transform: translateY(-2px);
+}
+ 
+/* Clases específicas para tintes sutiles en Orden de Merlín */
+.merlin-first {
+    background: linear-gradient(135deg, rgba(167, 243, 208, 0.4), rgba(255, 255, 255, 0.3));
+}
+.merlin-second {
+    background: linear-gradient(135deg, rgba(216, 180, 254, 0.4), rgba(255, 255, 255, 0.3));
+}
+.merlin-third {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
+}
+ 
+/* Header Glass Sticky */
+.glass-header {
+    background: rgba(248, 246, 252, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 30px rgba(74, 59, 105, 0.05);
+}
+ 
 /* Botones de Categoría */
 .tab-btn {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.5);
     border: 1px solid var(--glass-border);
     color: var(--text-muted);
     transition: all 0.2s ease;
 }
-
+ 
 .tab-btn:hover {
     color: var(--text-primary);
-    border-color: rgba(212, 175, 55, 0.3);
+    border-color: rgba(184, 134, 11, 0.3);
 }
-
+ 
 .tab-btn.active {
-    background: rgba(212, 175, 55, 0.12);
+    background: rgba(184, 134, 11, 0.1);
     color: var(--gold-accent);
     border-color: var(--gold-accent);
     font-weight: 600;
 }
-
+ 
 /* Input de búsqueda */
 .glass-input {
-    background: rgba(18, 13, 31, 0.6);
+    background: rgba(255, 255, 255, 0.6);
     border: 1px solid var(--glass-border);
     color: var(--text-primary);
     transition: all 0.2s ease;
 }
-
+ 
 .glass-input:focus {
+    background: rgba(255, 255, 255, 0.9);
     border-color: var(--glass-border-focus);
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.08);
+    box-shadow: 0 0 15px rgba(184, 134, 11, 0.15);
 }
-
+ 
 .glass-input::placeholder {
-    color: rgba(163, 155, 184, 0.5);
+    color: rgba(107, 90, 130, 0.6);
 }
-
+ 
 /* Ajustes visuales de trofeos */
 .trophy-wrap {
     letter-spacing: 0.08em;
