@@ -1,11 +1,11 @@
 :root {
-    /* Paleta Dorada y acentos optimizados para fondo claro */
+    /* Paleta Dorada y acentos limpios para fondo claro */
     --gold-accent: #f59e0b;      
     --gold-light: #fef08a;       
     --text-primary: #ffffff;     
     --text-secondary: #fae8ff;   
     
-    /* Cristal Base Traslúcido más luminoso */
+    /* Cristal Base Traslúcido luminoso y de gran contraste */
     --glass-bg: rgba(255, 255, 255, 0.14);
     --glass-bg-hover: rgba(255, 255, 255, 0.22);
     --glass-border: rgba(255, 255, 255, 0.35);
@@ -13,10 +13,10 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    /* Fondo base mucho más claro (púrpura pastel/luminoso) */
+    /* Fondo base luminoso (púrpura pastel suave) */
     background-color: #8352b2; 
     
-    /* Degradados etéreos muy suaves y luminosos que se funden de manera sutil */
+    /* Degradados etéreos muy sutiles y luminosos */
     background-image: 
         radial-gradient(circle at 15% 15%, rgba(255, 255, 255, 0.35) 0%, transparent 60%),
         radial-gradient(circle at 85% 20%, rgba(253, 224, 71, 0.25) 0%, transparent 65%),
@@ -52,7 +52,6 @@ body {
 
 /* --- ORDEN DE MERLÍN (TINTES SUTILES) --- */
 
-/* Primera Clase: Verde esmeralda luminoso */
 .merlin-first {
     background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(255, 255, 255, 0.1));
     border: 1px solid rgba(52, 211, 153, 0.45);
@@ -62,7 +61,6 @@ body {
     border-color: rgba(52, 211, 153, 0.7);
 }
 
-/* Segunda Clase: Morado luminoso */
 .merlin-second {
     background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(255, 255, 255, 0.1));
     border: 1px solid rgba(192, 132, 252, 0.45);
@@ -72,7 +70,6 @@ body {
     border-color: rgba(192, 132, 252, 0.7);
 }
 
-/* Tercera Clase: Blanco/Plateado luminoso */
 .merlin-third {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.08));
     border: 1px solid rgba(255, 255, 255, 0.55);
