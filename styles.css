@@ -1,0 +1,93 @@
+:root {
+    --bg-main: #0c0a14;
+    --glass-bg: rgba(22, 16, 38, 0.45);
+    --glass-bg-hover: rgba(30, 22, 51, 0.6);
+    --glass-border: rgba(192, 160, 98, 0.18);
+    --glass-border-focus: rgba(212, 175, 55, 0.4);
+    --gold-accent: #d4af37;
+    --gold-subtle: #c5a059;
+    --text-primary: #f3f0f7;
+    --text-muted: #a39bb8;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-main);
+    background-image: 
+        radial-gradient(at 10% 10%, rgba(59, 26, 102, 0.25) 0px, transparent 50%),
+        radial-gradient(at 90% 85%, rgba(20, 12, 41, 0.4) 0px, transparent 50%);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    min-height: 100vh;
+}
+
+/* Tipografía de títulos */
+.font-display {
+    font-family: 'Cinzel Decorative', serif;
+}
+
+/* Tarjeta Glassmorphism */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+    background: var(--glass-bg-hover);
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+/* Header Glass Sticky */
+.glass-header {
+    background: rgba(12, 10, 20, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+/* Botones de Categoría */
+.tab-btn {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+    color: var(--text-primary);
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+.tab-btn.active {
+    background: rgba(212, 175, 55, 0.12);
+    color: var(--gold-accent);
+    border-color: var(--gold-accent);
+    font-weight: 600;
+}
+
+/* Input de búsqueda */
+.glass-input {
+    background: rgba(18, 13, 31, 0.6);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+}
+
+.glass-input:focus {
+    border-color: var(--glass-border-focus);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.08);
+}
+
+.glass-input::placeholder {
+    color: rgba(163, 155, 184, 0.5);
+}
+
+/* Ajustes visuales de trofeos */
+.trophy-wrap {
+    letter-spacing: 0.08em;
+    word-break: break-word;
+    line-height: 1.5;
+}
