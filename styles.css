@@ -1,135 +1,114 @@
 :root {
-    /* Paleta Dorada y acentos limpios para fondo claro */
-    --gold-accent: #f59e0b;      
-    --gold-light: #fef08a;       
-    --text-primary: #ffffff;     
-    --text-secondary: #fae8ff;   
+    /* Tema Claro: Tonos morados muy pálidos y lilas */
+    --bg-main: #f8f6fc;
     
-    /* Cristal Base Traslúcido luminoso y de gran contraste */
-    --glass-bg: rgba(255, 255, 255, 0.14);
-    --glass-bg-hover: rgba(255, 255, 255, 0.22);
-    --glass-border: rgba(255, 255, 255, 0.35);
+    /* Vitrina de cristal clara base */
+    --glass-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+    --glass-bg-hover: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.5));
+    --glass-border: rgba(255, 255, 255, 0.8);
+    --glass-border-focus: rgba(184, 134, 11, 0.5); /* Dorado para el focus */
+    
+    /* Textos oscuros para alto contraste */
+    --gold-accent: #b8860b; 
+    --gold-subtle: #8a6327; 
+    --text-primary: #2d1b4e; 
+    --text-muted: #6b5a82; 
 }
-
+ 
 body {
     font-family: 'Inter', sans-serif;
-    /* Fondo base luminoso (púrpura pastel suave) */
-    background-color: #8352b2; 
-    
-    /* Degradados etéreos muy sutiles y luminosos */
+    background-color: var(--bg-main);
+    /* Fondo claro con destellos sutiles en lila y rosa pálido */
     background-image: 
-        radial-gradient(circle at 15% 15%, rgba(255, 255, 255, 0.35) 0%, transparent 60%),
-        radial-gradient(circle at 85% 20%, rgba(253, 224, 71, 0.25) 0%, transparent 65%),
-        radial-gradient(circle at 50% 90%, rgba(216, 180, 254, 0.4) 0%, transparent 70%),
-        linear-gradient(135deg, #7c48aa 0%, #9962cc 50%, #6d3a9b 100%);
+        radial-gradient(at 10% 10%, rgba(206, 182, 237, 0.3) 0px, transparent 50%),
+        radial-gradient(at 90% 85%, rgba(224, 196, 232, 0.4) 0px, transparent 50%);
     background-attachment: fixed;
     color: var(--text-primary);
     min-height: 100vh;
 }
-
+ 
 /* Tipografía de títulos */
 .font-display {
-    font-family: 'Cinzel', serif;
-    letter-spacing: 0.04em;
+    font-family: 'Cinzel Decorative', serif;
 }
-
-/* Tarjetas de Cristal Traslúcido (Glassmorphism) */
+ 
+/* Tarjeta Glassmorphism simulando vitrinas */
 .glass-card {
     background: var(--glass-bg);
-    backdrop-filter: blur(16px) saturate(150%);
-    -webkit-backdrop-filter: blur(16px) saturate(150%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border: 1px solid var(--glass-border);
-    box-shadow: 0 6px 24px 0 rgba(80, 30, 120, 0.15), inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+    /* Sombra suave para dar volumen a la "vitrina" */
+    box-shadow: 0 8px 32px 0 rgba(74, 59, 105, 0.08); 
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+ 
 .glass-card:hover {
     background: var(--glass-bg-hover);
-    border-color: rgba(253, 224, 71, 0.5);
-    box-shadow: 0 10px 30px 0 rgba(80, 30, 120, 0.25), 0 0 20px rgba(253, 224, 71, 0.2);
-    transform: translateY(-3px);
+    border-color: rgba(184, 134, 11, 0.4); /* Resplandor dorado al pasar el ratón */
+    box-shadow: 0 12px 40px 0 rgba(74, 59, 105, 0.12);
+    transform: translateY(-2px);
 }
-
-/* --- ORDEN DE MERLÍN (TINTES SUTILES) --- */
-
+ 
+/* Clases específicas para tintes sutiles en Orden de Merlín */
 .merlin-first {
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(255, 255, 255, 0.1));
-    border: 1px solid rgba(52, 211, 153, 0.45);
+    background: linear-gradient(135deg, rgba(167, 243, 208, 0.4), rgba(255, 255, 255, 0.3));
 }
-.merlin-first:hover {
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.3), rgba(255, 255, 255, 0.15));
-    border-color: rgba(52, 211, 153, 0.7);
-}
-
 .merlin-second {
-    background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(255, 255, 255, 0.1));
-    border: 1px solid rgba(192, 132, 252, 0.45);
+    background: linear-gradient(135deg, rgba(216, 180, 254, 0.4), rgba(255, 255, 255, 0.3));
 }
-.merlin-second:hover {
-    background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(255, 255, 255, 0.15));
-    border-color: rgba(192, 132, 252, 0.7);
-}
-
 .merlin-third {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.08));
-    border: 1px solid rgba(255, 255, 255, 0.55);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
 }
-.merlin-third:hover {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0.15));
-    border-color: rgba(255, 255, 255, 0.8);
-}
-
-/* Header Glass */
+ 
+/* Header Glass Sticky */
 .glass-header {
-    background: rgba(124, 72, 170, 0.5);
-    backdrop-filter: blur(18px) saturate(150%);
-    -webkit-backdrop-filter: blur(18px) saturate(150%);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 20px rgba(80, 30, 120, 0.12);
+    background: rgba(248, 246, 252, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 30px rgba(74, 59, 105, 0.05);
 }
-
+ 
 /* Botones de Categoría */
 .tab-btn {
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid var(--glass-border);
+    color: var(--text-muted);
     transition: all 0.2s ease;
 }
-
+ 
 .tab-btn:hover {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.22);
-    border-color: var(--gold-accent);
+    color: var(--text-primary);
+    border-color: rgba(184, 134, 11, 0.3);
 }
-
+ 
 .tab-btn.active {
-    background: rgba(245, 158, 11, 0.3);
-    color: var(--gold-light);
+    background: rgba(184, 134, 11, 0.1);
+    color: var(--gold-accent);
     border-color: var(--gold-accent);
     font-weight: 600;
-    box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
 }
-
+ 
 /* Input de búsqueda */
 .glass-input {
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    color: #ffffff;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
     transition: all 0.2s ease;
 }
-
+ 
 .glass-input:focus {
-    background: rgba(255, 255, 255, 0.25);
-    border-color: var(--gold-accent);
-    box-shadow: 0 0 18px rgba(245, 158, 11, 0.25);
-    outline: none;
+    background: rgba(255, 255, 255, 0.9);
+    border-color: var(--glass-border-focus);
+    box-shadow: 0 0 15px rgba(184, 134, 11, 0.15);
 }
-
+ 
 .glass-input::placeholder {
-    color: rgba(250, 232, 255, 0.8);
+    color: rgba(107, 90, 130, 0.6);
 }
-
-/* Formato para emojis de trofeos */
+ 
+/* Ajustes visuales de trofeos */
 .trophy-wrap {
     letter-spacing: 0.08em;
     word-break: break-word;
