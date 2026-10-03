@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,31 +8,31 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Fonts Google: Cinzel Decorative & Inter -->
+    <!-- Fonts Google: Cinzel (Corregido) & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!-- Estilos CSS Personalizados -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="min-h-screen flex flex-col justify-between overflow-x-hidden">
- 
+
     <div>
         <!-- HEADER GLASS MINIMALISTA -->
         <header class="py-6 px-4 text-center glass-header sticky top-0 z-50">
             <div class="max-w-5xl mx-auto">
                 <span class="text-[10px] tracking-[0.25em] text-[var(--gold-subtle)] uppercase block mb-1">Colegio Mágico de Magia y Hechicería</span>
                 
-                <h1 class="text-xl sm:text-2xl font-display font-bold text-[var(--text-primary)] tracking-wider mb-5">
+                <h1 class="text-xl sm:text-2xl font-display font-bold text-[var(--text-primary)] tracking-wider mb-4">
                     SALA DE TROFEOS
                 </h1>
- 
+
                 <!-- Search & Filters -->
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-xl mx-auto">
                     <input type="text" id="searchInput" placeholder="Buscar mago, bruja o universo..." 
                         class="w-full sm:w-64 glass-input rounded-full px-4 py-1.5 text-xs focus:outline-none">
- 
+
                     <div class="flex justify-center gap-1.5 text-xs">
                         <button onclick="filterCategory('all')" class="tab-btn active px-3.5 py-1.5 rounded-full">
                             Todos
@@ -48,19 +47,19 @@
                 </div>
             </div>
         </header>
- 
-        <!-- MAIN CONTENT CONTAINER -->
-        <main class="max-w-5xl mx-auto px-4 py-10 space-y-12">
- 
+
+        <!-- MAIN CONTENT CONTAINER (Márgenes reducidos) -->
+        <main class="max-w-5xl mx-auto px-4 py-8 space-y-8">
+
             <!-- COPA DE LAS CASAS -->
             <section id="house-cups" class="category-section category-cups">
-                <div class="mb-5 border-b border-purple-200 pb-2">
+                <div class="mb-4 border-b border-purple-200 pb-2">
                     <h2 class="text-base font-display font-semibold text-[var(--gold-accent)] flex items-center gap-2">
                         <span>🏆</span> COPA DE LAS CASAS
                     </h2>
                     <p class="text-xs text-[var(--text-muted)] mt-0.5">Copas ganadas por cada casa de Hogwarts</p>
                 </div>
- 
+
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <!-- Ravenclaw -->
                     <div class="glass-card rounded-2xl p-5 search-item" data-search="ravenclaw aguila copa casas">
@@ -72,7 +71,7 @@
                             🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆
                         </div>
                     </div>
- 
+
                     <!-- Gryffindor -->
                     <div class="glass-card rounded-2xl p-5 search-item" data-search="gryffindor leon copa casas">
                         <div class="flex items-center gap-2 mb-3">
@@ -83,7 +82,7 @@
                             🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆🏆
                         </div>
                     </div>
- 
+
                     <!-- Slytherin -->
                     <div class="glass-card rounded-2xl p-5 search-item" data-search="slytherin serpiente copa casas">
                         <div class="flex items-center gap-2 mb-3">
@@ -94,7 +93,7 @@
                             🏆🏆🏆🏆🏆🏆🏆🏆🏆
                         </div>
                     </div>
- 
+
                     <!-- Hufflepuff -->
                     <div class="glass-card rounded-2xl p-5 search-item" data-search="hufflepuff tejon copa casas">
                         <div class="flex items-center gap-2 mb-3">
@@ -107,16 +106,16 @@
                     </div>
                 </div>
             </section>
- 
+
             <!-- PREMIOS ANUALES -->
             <section id="annual-awards" class="category-section category-awards">
-                <div class="mb-5 border-b border-purple-200 pb-2">
+                <div class="mb-4 border-b border-purple-200 pb-2">
                     <h2 class="text-base font-display font-semibold text-[var(--gold-accent)] flex items-center gap-2">
                         <span>🎗️</span> PREMIOS ANUALES
                     </h2>
                     <p class="text-xs text-[var(--text-muted)] mt-0.5">Reconocimientos anuales a las brujas y magos destacados</p>
                 </div>
- 
+
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
                     <!-- Femeninos -->
                     <div class="glass-card rounded-2xl p-5">
@@ -142,7 +141,7 @@
                             <li class="search-item" data-search="mariann lovegood">• 💛🎗️ Mariann Lovegood</li>
                         </ul>
                     </div>
- 
+
                     <!-- Masculinos -->
                     <div class="glass-card rounded-2xl p-5">
                         <h3 class="text-xs font-semibold text-[var(--gold-subtle)] uppercase tracking-wider mb-3 pb-2 border-b border-purple-200/50">
@@ -168,16 +167,16 @@
                     </div>
                 </div>
             </section>
- 
+
             <!-- ORDEN DE MERLÍN -->
             <section id="merlin" class="category-section category-awards">
-                <div class="mb-5 border-b border-purple-200 pb-2">
+                <div class="mb-4 border-b border-purple-200 pb-2">
                     <h2 class="text-base font-display font-semibold text-[var(--gold-accent)] flex items-center gap-2">
                         <span>🏅</span> ORDEN DE MERLÍN
                     </h2>
                     <p class="text-xs text-[var(--text-muted)] mt-0.5">Premio otorgado a los magos y brujas que han logrado grandes hazañas</p>
                 </div>
- 
+
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
                     <!-- Primera -->
                     <div class="glass-card merlin-first rounded-2xl p-5">
@@ -189,7 +188,7 @@
                             <li class="search-item" data-search="roiber j potter">• Roiber J. Potter</li>
                         </ul>
                     </div>
- 
+
                     <!-- Segunda -->
                     <div class="glass-card merlin-second rounded-2xl p-5">
                         <h3 class="font-semibold text-purple-700 mb-2.5 pb-1 border-b border-purple-200/50">Segunda Clase</h3>
@@ -216,7 +215,7 @@
                             <li class="search-item" data-search="ashley granger">• Ashley Granger</li>
                         </ul>
                     </div>
- 
+
                     <!-- Tercera -->
                     <div class="glass-card merlin-third rounded-2xl p-5">
                         <h3 class="font-semibold text-slate-700 mb-2.5 pb-1 border-b border-slate-200/50">Tercera Clase</h3>
@@ -228,7 +227,7 @@
                     </div>
                 </div>
             </section>
- 
+
             <!-- PREMIO ESPECIAL -->
             <section id="special-awards" class="category-section category-awards">
                 <div class="glass-card rounded-2xl p-6 text-center">
@@ -243,114 +242,114 @@
                     </div>
                 </div>
             </section>
- 
+
             <!-- COPAS TEMÁTICAS -->
             <section id="themed-cups" class="category-section category-cups">
-                <div class="mb-5 border-b border-purple-200 pb-2">
+                <div class="mb-4 border-b border-purple-200 pb-2">
                     <h2 class="text-base font-display font-semibold text-[var(--gold-accent)] flex items-center gap-2">
                         <span>⚔️</span> COPAS TEMÁTICAS
                     </h2>
                     <p class="text-xs text-[var(--text-muted)] mt-0.5">Campeones por temática e universos externos</p>
                 </div>
- 
+
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
                     <!-- Juego de Tronos -->
                     <div class="glass-card rounded-2xl p-5 search-item" data-search="juego de tronos baratheon lannister targaryen">
-                        <h3 class="font-semibold text-[var(--gold-subtle)] mb-2.5 pb-1 border-b border-purple-200/50">Juego de Tronos</h3>
+                        <h3 class="font-semibold text-[var(--gold-subtle)] mb-2.5 pb-1 border-b border-purple-200/50">👑 Juego de Tronos</h3>
                         <ul class="space-y-1.5">
-                            <li class="flex justify-between"><span>Baratheon</span> <span class="text-[var(--gold-accent)]">🏆🏆</span></li>
-                            <li class="flex justify-between"><span>Lannister</span> <span class="text-[var(--gold-accent)]">🏆</span></li>
-                            <li class="flex justify-between"><span>Targaryen</span> <span class="text-[var(--gold-accent)]">🏆</span></li>
+                            <li class="flex justify-between"><span>💛🦌 Baratheon</span> <span class="text-[var(--gold-accent)]">🏆🏆</span></li>
+                            <li class="flex justify-between"><span>♥️🦁 Lannister</span> <span class="text-[var(--gold-accent)]">🏆</span></li>
+                            <li class="flex justify-between"><span>🖤🐉 Targaryen</span> <span class="text-[var(--gold-accent)]">🏆</span></li>
                         </ul>
                     </div>
- 
+
                     <!-- Aurores vs Mortífagos -->
                     <div class="glass-card rounded-2xl p-5 search-item" data-search="aurores vs mortifagos mortifagos">
-                        <h3 class="font-semibold text-[var(--gold-subtle)] mb-2.5 pb-1 border-b border-purple-200/50">Aurores vs Mortífagos</h3>
-                        <p class="flex justify-between"><span>Mortífagos</span> <span class="text-[var(--gold-accent)]">🏆</span></p>
+                        <h3 class="font-semibold text-[var(--gold-subtle)] mb-2.5 pb-1 border-b border-purple-200/50">✨ Aurores vs Mortífagos</h3>
+                        <p class="flex justify-between"><span>🖤💀 Mortífagos</span> <span class="text-[var(--gold-accent)]">🏆</span></p>
                     </div>
- 
+
                     <!-- Liga Inquisitorial vs ED -->
                     <div class="glass-card rounded-2xl p-5 search-item" data-search="liga inquisitorial vs ejercito de dumbledore">
-                        <h3 class="font-semibold text-[var(--gold-subtle)] mb-2.5 pb-1 border-b border-purple-200/50">Liga Inquisitorial vs ED</h3>
-                        <p class="flex justify-between"><span>Ejército de Dumbledore</span> <span class="text-[var(--gold-accent)]">🏆</span></p>
+                        <h3 class="font-semibold text-[var(--gold-subtle)] mb-2.5 pb-1 border-b border-purple-200/50">🏅 Liga Inquisitorial vs ED</h3>
+                        <p class="flex justify-between"><span>🤍🧙🏻‍♂️ Ejército de Dumbledore</span> <span class="text-[var(--gold-accent)]">🏆</span></p>
                     </div>
- 
+
                     <!-- Avatar -->
                     <div class="glass-card rounded-2xl p-5 search-item" data-search="avatar nomadas aire tribus del agua reino tierra">
-                        <h3 class="font-semibold text-[var(--gold-subtle)] mb-2.5 pb-1 border-b border-purple-200/50">Avatar</h3>
+                        <h3 class="font-semibold text-[var(--gold-subtle)] mb-2.5 pb-1 border-b border-purple-200/50">⬇️ Avatar</h3>
                         <ul class="space-y-1.5">
-                            <li class="flex justify-between"><span>Nómadas Aire</span> <span class="text-[var(--gold-accent)]">🏆</span></li>
-                            <li class="flex justify-between"><span>Tribus del Agua</span> <span class="text-[var(--gold-accent)]">🏆</span></li>
-                            <li class="flex justify-between"><span>Reino Tierra</span> <span class="text-[var(--gold-accent)]">🏆</span></li>
+                            <li class="flex justify-between"><span>🤍🌪️ Nómadas Aire</span> <span class="text-[var(--gold-accent)]">🏆</span></li>
+                            <li class="flex justify-between"><span>💙🌊 Tribus del Agua</span> <span class="text-[var(--gold-accent)]">🏆</span></li>
+                            <li class="flex justify-between"><span>💚🪨 Reino Tierra</span> <span class="text-[var(--gold-accent)]">🏆</span></li>
                         </ul>
                     </div>
- 
+
                     <!-- El Señor de los Anillos -->
                     <div class="glass-card rounded-2xl p-5 search-item" data-search="el senor de los anillos reino de gondor">
-                        <h3 class="font-semibold text-[var(--gold-subtle)] mb-2.5 pb-1 border-b border-purple-200/50">El Señor de los Anillos</h3>
-                        <p class="flex justify-between"><span>Reino de Gondor</span> <span class="text-[var(--gold-accent)]">🏆</span></p>
+                        <h3 class="font-semibold text-[var(--gold-subtle)] mb-2.5 pb-1 border-b border-purple-200/50">💍 El Señor de los Anillos</h3>
+                        <p class="flex justify-between"><span>🤍🫅🏻 Reino de Gondor</span> <span class="text-[var(--gold-accent)]">🏆</span></p>
                     </div>
- 
+
                     <!-- Percy Jackson -->
                     <div class="glass-card rounded-2xl p-5 search-item" data-search="percy jackson atenea hades">
-                        <h3 class="font-semibold text-[var(--gold-subtle)] mb-2.5 pb-1 border-b border-purple-200/50">Percy Jackson</h3>
+                        <h3 class="font-semibold text-[var(--gold-subtle)] mb-2.5 pb-1 border-b border-purple-200/50">🏛️ Percy Jackson</h3>
                         <ul class="space-y-1.5">
-                            <li class="flex justify-between"><span>Atenea</span> <span class="text-[var(--gold-accent)]">🏆</span></li>
-                            <li class="flex justify-between"><span>Hades</span> <span class="text-[var(--gold-accent)]">🏆🏆</span></li>
+                            <li class="flex justify-between"><span>💚🦉 Atenea</span> <span class="text-[var(--gold-accent)]">🏆</span></li>
+                            <li class="flex justify-between"><span>🖤💀 Hades</span> <span class="text-[var(--gold-accent)]">🏆🏆</span></li>
                         </ul>
                     </div>
- 
+
                     <!-- Los Juegos del Hambre -->
                     <div class="glass-card rounded-2xl p-5 search-item" data-search="los juegos del hambre distrito 12">
-                        <h3 class="font-semibold text-[var(--gold-subtle)] mb-2.5 pb-1 border-b border-purple-200/50">Los Juegos del Hambre</h3>
-                        <p class="flex justify-between"><span>Distrito 12</span> <span class="text-[var(--gold-accent)]">🏆</span></p>
+                        <h3 class="font-semibold text-[var(--gold-subtle)] mb-2.5 pb-1 border-b border-purple-200/50">🕌 Los Juegos del Hambre</h3>
+                        <p class="flex justify-between"><span>🖤🔥 Distrito 12</span> <span class="text-[var(--gold-accent)]">🏆</span></p>
                     </div>
- 
+
                     <!-- Wednesday Addams -->
                     <div class="glass-card rounded-2xl p-5 search-item" data-search="wednesday addams escamas">
-                        <h3 class="font-semibold text-[var(--gold-subtle)] mb-2.5 pb-1 border-b border-purple-200/50">Wednesday Addams</h3>
-                        <p class="flex justify-between"><span>Escamas</span> <span class="text-[var(--gold-accent)]">🏆🏆</span></p>
+                        <h3 class="font-semibold text-[var(--gold-subtle)] mb-2.5 pb-1 border-b border-purple-200/50">🕸️ Wednesday Addams</h3>
+                        <p class="flex justify-between"><span>🩵🧜🏻‍♀️ Escamas</span> <span class="text-[var(--gold-accent)]">🏆🏆</span></p>
                     </div>
- 
+
                     <!-- ACOTAR -->
                     <div class="glass-card rounded-2xl p-5 search-item" data-search="acotar corte invierno">
-                        <h3 class="font-semibold text-[var(--gold-subtle)] mb-2.5 pb-1 border-b border-purple-200/50">ACOTAR</h3>
-                        <p class="flex justify-between"><span>Corte Invierno</span> <span class="text-[var(--gold-accent)]">🏆</span></p>
+                        <h3 class="font-semibold text-[var(--gold-subtle)] mb-2.5 pb-1 border-b border-purple-200/50">🧝🏻 ACOTAR</h3>
+                        <p class="flex justify-between"><span>🩵❄️ Corte Invierno</span> <span class="text-[var(--gold-accent)]">🏆</span></p>
                     </div>
- 
+
                     <!-- Divergente -->
                     <div class="glass-card rounded-2xl p-5 search-item" data-search="divergente abnegacion">
-                        <h3 class="font-semibold text-[var(--gold-subtle)] mb-2.5 pb-1 border-b border-purple-200/50">Divergente</h3>
-                        <p class="flex justify-between"><span>Abnegación</span> <span class="text-[var(--gold-accent)]">🏆</span></p>
+                        <h3 class="font-semibold text-[var(--gold-subtle)] mb-2.5 pb-1 border-b border-purple-200/50">🏙️ Divergente</h3>
+                        <p class="flex justify-between"><span>🩶🤝🏻 Abnegación</span> <span class="text-[var(--gold-accent)]">🏆</span></p>
                     </div>
- 
+
                     <!-- World Of Warcraft -->
                     <div class="glass-card rounded-2xl p-5 search-item" data-search="world of wow warcraft horda">
-                        <h3 class="font-semibold text-[var(--gold-subtle)] mb-2.5 pb-1 border-b border-purple-200/50">World Of Warcraft</h3>
-                        <p class="flex justify-between"><span>Horda</span> <span class="text-[var(--gold-accent)]">🏆</span></p>
+                        <h3 class="font-semibold text-[var(--gold-subtle)] mb-2.5 pb-1 border-b border-purple-200/50">🌀 World Of Warcraft</h3>
+                        <p class="flex justify-between"><span>❤️⚔️ Horda</span> <span class="text-[var(--gold-accent)]">🏆</span></p>
                     </div>
                 </div>
             </section>
- 
+
         </main>
- 
+
         <!-- FOOTER MINIMALISTA -->
-        <footer class="mt-16 border-t border-purple-200 py-8 text-center text-xs text-[var(--text-muted)]">
-            <p class="font-display text-[var(--gold-subtle)]">SALA DE TROFEOS • HOGWARTS</p>
+        <footer class="mt-12 border-t border-purple-200 py-8 text-center text-xs text-[var(--text-muted)]">
+            <p class="font-display text-[var(--gold-subtle)] font-bold">SALA DE TROFEOS • HOGWARTS</p>
             <p class="mt-1 opacity-80">Colegio de Magia y Hechicería</p>
         </footer>
     </div>
- 
-    <!-- JAVASCRIPT: Mismo funcionamiento -->
+
+    <!-- JAVASCRIPT -->
     <script>
         function filterCategory(type) {
             const tabs = document.querySelectorAll('.tab-btn');
             tabs.forEach(tab => tab.classList.remove('active'));
             event.target.classList.add('active');
- 
+
             document.getElementById('searchInput').value = '';
- 
+
             const sections = document.querySelectorAll('.category-section');
             sections.forEach(sec => {
                 if (type === 'all') {
@@ -361,17 +360,17 @@
                     sec.style.display = sec.classList.contains('category-awards') ? 'block' : 'none';
                 }
             });
- 
+
             const items = document.querySelectorAll('.search-item');
             items.forEach(item => item.style.display = '');
         }
- 
+
         const searchInput = document.getElementById('searchInput');
         searchInput.addEventListener('input', function(e) {
             const query = e.target.value.toLowerCase().trim();
             const searchItems = document.querySelectorAll('.search-item');
             const sections = document.querySelectorAll('.category-section');
- 
+
             if (query === '') {
                 const activeTab = document.querySelector('.tab-btn.active');
                 if (activeTab) {
@@ -379,13 +378,13 @@
                 }
                 return;
             }
- 
+
             sections.forEach(sec => sec.style.display = 'block');
- 
+
             searchItems.forEach(item => {
                 const searchData = item.getAttribute('data-search') || '';
                 const text = item.textContent.toLowerCase();
- 
+
                 if (searchData.toLowerCase().includes(query) || text.includes(query)) {
                     item.style.display = '';
                 } else {
