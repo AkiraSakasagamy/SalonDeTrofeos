@@ -6,7 +6,7 @@
     --glass-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
     --glass-bg-hover: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.5));
     --glass-border: rgba(255, 255, 255, 0.8);
-    --glass-border-focus: rgba(184, 134, 11, 0.5); /* Dorado para el focus */
+    --glass-border-focus: rgba(184, 134, 11, 0.5);
     
     /* Textos oscuros para alto contraste */
     --gold-accent: #b8860b; 
@@ -22,7 +22,8 @@ body {
     min-height: 100vh;
 }
 
-/* FIX AL SCROLL LENTO: Se saca el background-attachment de body a un pseudo-elemento fijo */
+/* FIX AL SCROLL LENTO: Se saca el background-attachment de body a un pseudo-elemento fijo. 
+   Se añadió translateZ(0) para forzar aceleración por hardware (GPU) */
 body::before {
     content: "";
     position: fixed;
@@ -36,6 +37,7 @@ body::before {
         radial-gradient(at 90% 85%, rgba(224, 196, 232, 0.5) 0px, transparent 50%);
     z-index: -1;
     pointer-events: none; /* Evita que el fondo intercepte clicks */
+    transform: translateZ(0);
 }
 
 /* Tipografía de títulos */
@@ -46,19 +48,23 @@ body::before {
 /* Tarjeta Glassmorphism simulando vitrinas */
 .glass-card {
     background: var(--glass-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    /* Optimización de Scroll: Se redujo el blur de 16px a 8px para aliviar el renderizado de la GPU */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border: 1px solid var(--glass-border);
     /* Sombra suave para dar volumen a la "vitrina" */
     box-shadow: 0 8px 32px 0 rgba(74, 59, 105, 0.08); 
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Optimización de Scroll: Delega el renderizado a la tarjeta gráfica directamente */
+    transform: translateZ(0);
+    will-change: transform, box-shadow;
 }
 
 .glass-card:hover {
     background: var(--glass-bg-hover);
     border-color: rgba(184, 134, 11, 0.4); /* Resplandor dorado al pasar el ratón */
     box-shadow: 0 12px 40px 0 rgba(74, 59, 105, 0.12);
-    transform: translateY(-2px);
+    transform: translateY(-2px) translateZ(0); /* Mantiene la aceleración en hover */
 }
 
 /* Clases específicas para tintes sutiles en Orden de Merlín */
@@ -74,11 +80,12 @@ body::before {
 
 /* Header Glass Sticky */
 .glass-header {
-    background: rgba(234, 226, 242, 0.7); /* Se oscurece también el Header acorde al fondo */
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(234, 226, 242, 0.7); 
+    backdrop-filter: blur(12px); /* Ligeramente reducido para rendimiento */
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.6);
     box-shadow: 0 4px 30px rgba(74, 59, 105, 0.05);
+    transform: translateZ(0); /* Aceleración por GPU */
 }
 
 /* Botones de Categoría */
@@ -122,8 +129,9 @@ body::before {
     box-shadow: 0 0 0 2px rgba(184, 134, 11, 0.2);
 }
 
-/* Contenedor de trofeos para evitar desbordamiento si hay muchos emojis */
+/* Ajustes visuales de trofeos */
 .trophy-wrap {
+    letter-spacing: 0.08em;
     word-break: break-word;
     line-height: 1.5;
 }
