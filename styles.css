@@ -1,25 +1,27 @@
 :root {
-    /* Paleta Morada, Blanco y Dorada (Más clara y limpia) */
-    --gold-accent: #fbbf24;      /* Dorado cálido y luminoso */
-    --gold-light: #fef08a;       /* Dorado claro/crema */
-    --text-primary: #ffffff;     /* Blanco puro para nitidez */
-    --text-secondary: #e9d5ff;   /* Lila muy claro */
+    /* Paleta Dorada y acentos para textos sobre fondo claro */
+    --gold-accent: #fbbf24;      
+    --gold-light: #fef08a;       
+    --text-primary: #ffffff;     
+    --text-secondary: #f3e8ff;   
     
     /* Cristal Base Traslúcido */
-    --glass-bg: rgba(255, 255, 255, 0.12);
-    --glass-bg-hover: rgba(255, 255, 255, 0.18);
-    --glass-border: rgba(255, 255, 255, 0.28);
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-bg-hover: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.25);
 }
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #311353;
-    /* Fondo morado medio iluminado con destellos radiales blancos y dorados */
+    /* Base mucho más clara para todo el documento */
+    background-color: #55317a; 
+    
+    /* Degradados muy difuminados para eliminar cortes fuertes de color */
     background-image: 
-        radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 45%),
-        radial-gradient(circle at 85% 15%, rgba(251, 191, 36, 0.18) 0%, transparent 40%),
-        radial-gradient(circle at 50% 85%, rgba(192, 132, 252, 0.22) 0%, transparent 50%),
-        linear-gradient(135deg, #2e124d 0%, #4a1c6d 50%, #25093e 100%);
+        radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.18) 0%, transparent 75%),
+        radial-gradient(circle at 100% 0%, rgba(251, 191, 36, 0.15) 0%, transparent 75%),
+        radial-gradient(circle at 50% 100%, rgba(192, 132, 252, 0.25) 0%, transparent 85%),
+        linear-gradient(135deg, #4b266a 0%, #683696 50%, #421f66 100%);
     background-attachment: fixed;
     color: var(--text-primary);
     min-height: 100vh;
@@ -34,103 +36,100 @@ body {
 /* Tarjetas de Cristal Traslúcido (Glassmorphism) */
 .glass-card {
     background: var(--glass-bg);
-    backdrop-filter: blur(16px) saturate(160%);
-    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
     border: 1px solid var(--glass-border);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.22), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.15), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass-card:hover {
     background: var(--glass-bg-hover);
-    border-color: rgba(251, 191, 36, 0.5);
-    box-shadow: 0 12px 35px 0 rgba(0, 0, 0, 0.3), 0 0 15px rgba(251, 191, 36, 0.2);
+    border-color: rgba(251, 191, 36, 0.4);
+    box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.2), 0 0 15px rgba(251, 191, 36, 0.15);
     transform: translateY(-3px);
 }
 
 /* --- ORDEN DE MERLÍN (TINTES SUTILES) --- */
 
-/* Primera Clase: Verde esmeralda traslúcido */
+/* Primera Clase: Verde esmeralda traslúcido muy ligero */
 .merlin-first {
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.22), rgba(255, 255, 255, 0.08));
-    border: 1px solid rgba(52, 211, 153, 0.45);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2), 0 0 12px rgba(16, 185, 129, 0.15);
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(255, 255, 255, 0.05));
+    border: 1px solid rgba(52, 211, 153, 0.35);
 }
 .merlin-first:hover {
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.3), rgba(255, 255, 255, 0.12));
-    border-color: rgba(52, 211, 153, 0.7);
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.22), rgba(255, 255, 255, 0.1));
+    border-color: rgba(52, 211, 153, 0.6);
 }
 
-/* Segunda Clase: Morado/Violeta traslúcido */
+/* Segunda Clase: Morado traslúcido muy ligero */
 .merlin-second {
-    background: linear-gradient(135deg, rgba(168, 85, 247, 0.22), rgba(255, 255, 255, 0.08));
-    border: 1px solid rgba(192, 132, 252, 0.45);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2), 0 0 12px rgba(168, 85, 247, 0.15);
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(255, 255, 255, 0.05));
+    border: 1px solid rgba(192, 132, 252, 0.35);
 }
 .merlin-second:hover {
-    background: linear-gradient(135deg, rgba(168, 85, 247, 0.32), rgba(255, 255, 255, 0.12));
-    border-color: rgba(192, 132, 252, 0.7);
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.22), rgba(255, 255, 255, 0.1));
+    border-color: rgba(192, 132, 252, 0.6);
 }
 
-/* Tercera Clase: Blanco/Plateado cristalino */
+/* Tercera Clase: Blanco/Plateado traslúcido muy ligero */
 .merlin-third {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.08));
-    border: 1px solid rgba(255, 255, 255, 0.55);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2), 0 0 12px rgba(255, 255, 255, 0.2);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.45);
 }
 .merlin-third:hover {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.12));
-    border-color: rgba(255, 255, 255, 0.85);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.1));
+    border-color: rgba(255, 255, 255, 0.7);
 }
 
 /* Header Glass */
 .glass-header {
-    background: rgba(46, 18, 77, 0.65);
-    backdrop-filter: blur(20px) saturate(160%);
-    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    background: rgba(75, 38, 106, 0.4);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Botones de Categoría */
 .tab-btn {
     background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: var(--text-secondary);
     transition: all 0.2s ease;
 }
 
 .tab-btn:hover {
     color: #ffffff;
-    background: rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.15);
     border-color: var(--gold-accent);
 }
 
 .tab-btn.active {
-    background: rgba(251, 191, 36, 0.22);
+    background: rgba(251, 191, 36, 0.2);
     color: var(--gold-accent);
     border-color: var(--gold-accent);
     font-weight: 600;
-    box-shadow: 0 0 10px rgba(251, 191, 36, 0.25);
+    box-shadow: 0 0 10px rgba(251, 191, 36, 0.2);
 }
 
 /* Input de búsqueda */
 .glass-input {
-    background: rgba(0, 0, 0, 0.18);
-    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     color: #ffffff;
     transition: all 0.2s ease;
 }
 
 .glass-input:focus {
-    background: rgba(0, 0, 0, 0.28);
+    background: rgba(255, 255, 255, 0.18);
     border-color: var(--gold-accent);
-    box-shadow: 0 0 15px rgba(251, 191, 36, 0.3);
+    box-shadow: 0 0 15px rgba(251, 191, 36, 0.2);
     outline: none;
 }
 
 .glass-input::placeholder {
-    color: rgba(233, 213, 255, 0.65);
+    color: rgba(243, 232, 255, 0.75);
 }
 
 /* Formato para emojis de trofeos */
