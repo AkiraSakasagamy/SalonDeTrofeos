@@ -4,56 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🏰✨ Salón de la Fama de Hogwarts ✨🏰</title>
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <!-- Fonts Google: Cinzel & Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <style>
-        :root {
-            --bg-dark: #0a080d;
-            --card-bg: rgba(18, 15, 25, 0.95);
-            --parchment-border: rgba(212, 175, 55, 0.35);
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-dark);
-            color: #f3e5ab;
-            min-height: 100vh;
-        }
-
-        .font-cinzel {
-            font-family: 'Cinzel', serif;
-        }
-
-        .text-gold-gradient {
-            background: linear-gradient(135deg, #fff5c0 0%, #d4af37 50%, #aa7c11 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .magical-card {
-            background: var(--card-bg);
-            border: 1px solid var(--parchment-border);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-        }
-
-        .trophy-wrap {
-            letter-spacing: 0.1em;
-            word-break: break-word;
-            line-height: 1.7;
-        }
-
-        .tab-btn.active {
-            background: #d4af37;
-            color: #0a080d;
-            font-weight: 700;
-            border-color: #fef08a;
-        }
-    </style>
+    <!-- Estilos CSS Personalizados -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="min-h-screen text-amber-100 flex flex-col justify-between overflow-x-hidden">
 
@@ -65,7 +26,6 @@
                     <span class="text-xs tracking-widest text-amber-400 font-cinzel uppercase">Colegio Mágico de Magia y Hechicería</span>
                 </div>
                 
-                <!-- Heading principal de menor tamaño -->
                 <h1 class="text-xl sm:text-2xl md:text-3xl font-cinzel font-bold text-gold-gradient tracking-wide mb-2">
                     🏰 SALÓN DE LA FAMA 🏰
                 </h1>
@@ -201,10 +161,10 @@
                             <li class="search-item" data-search="yasser weasley">• 💛🎗️ Yasser Weasley</li>
                             <li class="search-item" data-search="daykel gaunt">• 💚🎗️ Daykel Gaunt</li>
                             <li class="search-item" data-search="luance black">• 💚🎗️ Luance Black</li>
-                            <li class="search-item" data-search="mark rutherford">• ❤️🎗️🎗️ Mark Rutherford</li>
+                            <li class="search-item" data-search="mark rutherford">• ❤️️🎗️🎗️ Mark Rutherford</li>
                             <li class="search-item" data-search="andy greywind">• 💚🎗️ Andy Greywind</li>
                             <li class="search-item" data-search="hector black">• 💚🎗️ Héctor Black</li>
-                            <li class="search-item text-amber-300 font-semibold" data-search="luis miguel scamander">• 💙🎗️🎗️🎗️ Luis Miguel Scamander</li>
+                            <li class="search-item text-amber-300 font-semibold" data-search="luis miguel scamander">• 💙🎗️🎗️🎗️️ Luis Miguel Scamander</li>
                             <li class="search-item" data-search="jose black">• ❤️🎗️🎗️ José Black</li>
                             <li class="search-item" data-search="manu grindelwald">• 💚🎗️ Manu Grindelwald</li>
                             <li class="search-item" data-search="carlos lupin">• 💚🎗️ Carlos Lupin</li>
@@ -390,15 +350,13 @@
         </footer>
     </div>
 
-    <!-- JAVASCRIPT: Filters & Search Logic (Zero Dependencies) -->
+    <!-- JAVASCRIPT: Filters & Search Logic -->
     <script>
-        // Tab Filter Logic
         function filterCategory(type) {
             const tabs = document.querySelectorAll('.tab-btn');
             tabs.forEach(tab => tab.classList.remove('active'));
             event.target.classList.add('active');
 
-            // Reset search box when clicking tab
             document.getElementById('searchInput').value = '';
 
             const sections = document.querySelectorAll('.category-section');
@@ -412,12 +370,10 @@
                 }
             });
 
-            // Show all search items when tab is switched
             const items = document.querySelectorAll('.search-item');
             items.forEach(item => item.style.display = '');
         }
 
-        // Live Search Logic
         const searchInput = document.getElementById('searchInput');
         searchInput.addEventListener('input', function(e) {
             const query = e.target.value.toLowerCase().trim();
@@ -432,7 +388,6 @@
                 return;
             }
 
-            // Make all sections visible during search
             sections.forEach(sec => sec.style.display = 'block');
 
             searchItems.forEach(item => {
